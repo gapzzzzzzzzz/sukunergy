@@ -108,8 +108,8 @@ export default function CartPage() {
               </Link>
             </Button>
             
-            <div className="flex items-center justify-between">
-              <h1 className="text-3xl font-bold text-gray-900">
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+              <h1 className="text-2xl sm:text-3xl font-bold text-gray-900">
                 Keranjang Belanja ({itemCount} item)
               </h1>
               
@@ -117,7 +117,7 @@ export default function CartPage() {
                 <Button
                   variant="outline"
                   onClick={clearCart}
-                  className="text-red-600 hover:text-red-700 hover:bg-red-50"
+                  className="text-red-600 hover:text-red-700 hover:bg-red-50 w-full sm:w-auto"
                 >
                   <Trash2 className="mr-2 h-4 w-4" />
                   Kosongkan Keranjang
@@ -132,8 +132,85 @@ export default function CartPage() {
               <div className="space-y-4">
                 {items.map((item) => (
                   <Card key={item.id}>
-                    <CardContent className="p-6">
-                      <div className="flex items-center space-x-4">
+                    <CardContent className="p-4 sm:p-6">
+                      {/* Mobile Layout */}
+                      <div className="block sm:hidden">
+                        <div className="flex items-start space-x-3 mb-4">
+                          {/* Product Image Placeholder */}
+                          <div className="w-16 h-16 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
+                            <span className="text-primary font-bold text-sm">
+                              {item.productName.split(' ')[1]?.[0] || 'S'}
+                            </span>
+                          </div>
+
+                          {/* Product Info */}
+                          <div className="flex-1 min-w-0">
+                            <h3 className="text-base font-semibold text-gray-900 mb-1">
+                              {item.productName}
+                            </h3>
+                            <p className="text-sm text-gray-600 mb-1">
+                              Varian: {item.variantName}
+                            </p>
+                            {item.weight && (
+                              <p className="text-xs text-gray-500">
+                                Berat: {item.weight}g
+                              </p>
+                            )}
+                          </div>
+
+                          {/* Remove Button */}
+                          <Button
+                            variant="ghost"
+                            size="icon"
+                            onClick={() => removeItem(item.id)}
+                            className="text-red-500 hover:text-red-700 hover:bg-red-50 h-8 w-8"
+                          >
+                            <Trash2 className="h-4 w-4" />
+                          </Button>
+                        </div>
+
+                        {/* Mobile Price and Quantity */}
+                        <div className="flex items-center justify-between">
+                          <div>
+                            <div className="text-lg font-bold text-primary">
+                              {formatPrice(item.price * item.quantity)}
+                            </div>
+                            <div className="text-sm text-gray-500">
+                              {formatPrice(item.price)} / item
+                            </div>
+                          </div>
+
+                          {/* Quantity Controls */}
+                          <div className="flex items-center space-x-2">
+                            <Button
+                              variant="outline"
+                              size="icon"
+                              onClick={() => handleQuantityChange(item.id, item.quantity - 1)}
+                              disabled={item.quantity <= 1}
+                              className="h-8 w-8"
+                            >
+                              <Minus className="h-3 w-3" />
+                            </Button>
+                            
+                            <span className="text-base font-semibold min-w-[1.5rem] text-center">
+                              {item.quantity}
+                            </span>
+                            
+                            <Button
+                              variant="outline"
+                              size="icon"
+                              onClick={() => handleQuantityChange(item.id, item.quantity + 1)}
+                              disabled={item.quantity >= item.maxStock}
+                              className="h-8 w-8"
+                            >
+                              <Plus className="h-3 w-3" />
+                            </Button>
+                          </div>
+                        </div>
+                      </div>
+
+                      {/* Desktop Layout */}
+                      <div className="hidden sm:flex items-center space-x-4">
                         {/* Product Image Placeholder */}
                         <div className="w-20 h-20 bg-primary/10 rounded-lg flex items-center justify-center flex-shrink-0">
                           <span className="text-primary font-bold text-lg">
@@ -209,9 +286,9 @@ export default function CartPage() {
 
             {/* Order Summary */}
             <div className="lg:col-span-1">
-              <Card className="sticky top-24">
-                <CardHeader>
-                  <CardTitle>Ringkasan Pesanan</CardTitle>
+              <Card className="sticky top-4 lg:top-24">
+                <CardHeader className="pb-4">
+                  <CardTitle className="text-lg">Ringkasan Pesanan</CardTitle>
                 </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex justify-between text-sm">

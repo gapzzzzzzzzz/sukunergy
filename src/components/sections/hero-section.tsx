@@ -89,7 +89,7 @@ export function HeroSection() {
       </div>
 
       <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
           {/* Content */}
           <div className="text-center lg:text-left">
             {/* Badge */}
@@ -127,13 +127,14 @@ export function HeroSection() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-4 mb-8 animate-slide-up">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 animate-slide-up">
               <Button
                 size="xl"
                 onClick={handleWhatsAppOrder}
-                className="group"
+                className="group w-full sm:w-auto"
               >
-                Order via WhatsApp
+                <span className="hidden sm:inline">Order via WhatsApp</span>
+                <span className="sm:hidden">Pesan via WhatsApp</span>
                 <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
               </Button>
               
@@ -141,6 +142,7 @@ export function HeroSection() {
                 variant="outline"
                 size="xl"
                 asChild
+                className="w-full sm:w-auto"
               >
                 <Link href="/products">
                   Lihat Semua Produk
@@ -151,7 +153,7 @@ export function HeroSection() {
                 variant="ghost"
                 size="xl"
                 onClick={() => setIsVideoModalOpen(true)}
-                className="group"
+                className="group w-full sm:w-auto"
               >
                 <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
                 Tonton Video
@@ -175,14 +177,14 @@ export function HeroSection() {
           </div>
 
           {/* Product Showcase */}
-          <div className="relative">
+          <div className="relative lg:pl-4">
             <div className="relative z-10 animate-fade-in">
               <Image
                 src={heroImages[currentImageIndex].src}
                 alt={heroImages[currentImageIndex].alt}
                 width={600}
                 height={600}
-                className="w-full h-auto max-w-md mx-auto lg:max-w-full rounded-2xl shadow-2xl"
+                className="w-full h-auto max-w-sm sm:max-w-md mx-auto lg:max-w-full rounded-2xl shadow-2xl"
                 priority
               />
               

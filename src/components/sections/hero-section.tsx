@@ -88,10 +88,10 @@ export function HeroSection() {
         ))}
       </div>
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-12 xl:gap-16 items-center">
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 lg:py-20">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 xl:gap-20 items-center">
           {/* Content */}
-          <div className="text-center lg:text-left">
+          <div className="text-center lg:text-left order-2 lg:order-1">
             {/* Badge */}
             <Badge variant="new" className="mb-4 animate-fade-in">
               🌟 Produk Lokal Indonesia Terbaik
@@ -127,36 +127,37 @@ export function HeroSection() {
             </div>
 
             {/* CTA Buttons */}
-            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 animate-slide-up">
+            <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mb-8 animate-slide-up max-w-lg mx-auto lg:mx-0">
               <Button
-                size="xl"
+                size="lg"
                 onClick={handleWhatsAppOrder}
-                className="group w-full sm:w-auto"
+                className="group w-full sm:w-auto sm:flex-1"
               >
                 <span className="hidden sm:inline">Order via WhatsApp</span>
                 <span className="sm:hidden">Pesan via WhatsApp</span>
-                <ArrowRight className="ml-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="ml-2 h-4 w-4 group-hover:translate-x-1 transition-transform" />
               </Button>
               
               <Button
                 variant="outline"
-                size="xl"
+                size="lg"
                 asChild
-                className="w-full sm:w-auto"
+                className="w-full sm:w-auto sm:flex-1"
               >
                 <Link href="/products">
-                  Lihat Semua Produk
+                  Lihat Produk
                 </Link>
               </Button>
               
               <Button
                 variant="ghost"
-                size="xl"
+                size="lg"
                 onClick={() => setIsVideoModalOpen(true)}
                 className="group w-full sm:w-auto"
               >
-                <Play className="mr-2 h-5 w-5 group-hover:scale-110 transition-transform" />
-                Tonton Video
+                <Play className="mr-2 h-4 w-4 group-hover:scale-110 transition-transform" />
+                <span className="hidden sm:inline">Tonton Video</span>
+                <span className="sm:hidden">Video</span>
               </Button>
             </div>
 
@@ -177,14 +178,14 @@ export function HeroSection() {
           </div>
 
           {/* Product Showcase */}
-          <div className="relative lg:pl-4">
+          <div className="relative order-1 lg:order-2">
             <div className="relative z-10 animate-fade-in">
               <Image
                 src={heroImages[currentImageIndex].src}
                 alt={heroImages[currentImageIndex].alt}
                 width={600}
                 height={600}
-                className="w-full h-auto max-w-sm sm:max-w-md mx-auto lg:max-w-full rounded-2xl shadow-2xl"
+                className="w-full h-auto max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto rounded-2xl shadow-2xl"
                 priority
               />
               

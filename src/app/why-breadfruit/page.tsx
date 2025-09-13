@@ -14,11 +14,11 @@ export const metadata: Metadata = generateSEOMetadata({
 });
 
 const nutritionFacts = [
-  { label: 'Protein', value: '4.3g', description: 'per 100g sukun' },
+  { label: 'Protein', value: '4.0g', description: 'per 100g sukun matang' },
   { label: 'Serat', value: '4.9g', description: 'per 100g sukun' },
   { label: 'Vitamin C', value: '29mg', description: '32% kebutuhan harian' },
-  { label: 'Kalium', value: '490mg', description: 'baik untuk jantung' },
-  { label: 'Indeks Glikemik', value: '68', description: 'lebih rendah dari nasi' },
+  { label: 'Kalium', value: '490mg', description: 'lebih tinggi dari pisang' },
+  { label: 'Indeks Glikemik', value: '~68', description: 'lebih rendah dari nasi' },
   { label: 'Kalori', value: '103', description: 'per 100g sukun' },
 ];
 
@@ -26,28 +26,28 @@ const benefits = [
   {
     icon: Heart,
     title: 'Kesehatan Jantung',
-    description: 'Kaya kalium yang membantu mengatur tekanan darah dan menjaga kesehatan kardiovaskular.',
+    description: 'Kandungan kalium yang melimpah, yaitu 490 mg per 100g, secara aktif membantu mengatur tekanan darah dan menjaga fungsi kardiovaskular yang sehat, menjadikannya makanan yang sangat baik untuk kesehatan jantung.',
     color: 'text-red-500',
     bgColor: 'bg-red-50',
   },
   {
     icon: Zap,
     title: 'Energi Berkelanjutan',
-    description: 'Karbohidrat kompleks memberikan energi stabil tanpa lonjakan gula darah.',
+    description: 'Berkat karbohidrat kompleks dan profil Indeks Glikemik moderat, sukun menyediakan pasokan energi yang stabil dan tahan lama untuk tubuh Anda, ideal untuk bahan bakar sebelum beraktivitas atau untuk pemulihan setelahnya, tanpa menyebabkan "sugar crash".',
     color: 'text-yellow-500',
     bgColor: 'bg-yellow-50',
   },
   {
     icon: Shield,
     title: 'Antioksidan Tinggi',
-    description: 'Vitamin C dan flavonoid melindungi sel dari kerusakan radikal bebas.',
+    description: 'Sukun kaya akan Vitamin C dan berbagai flavonoid yang memiliki sifat anti-inflamasi. Uniknya, sukun juga mengandung karotenoid seperti β-karoten dan lutein, antioksidan kuat yang tidak ditemukan dalam nasi putih atau kentang putih, yang membantu melindungi sel-sel tubuh dari kerusakan akibat radikal bebas.',
     color: 'text-blue-500',
     bgColor: 'bg-blue-50',
   },
   {
     icon: Leaf,
     title: 'Ramah Lingkungan',
-    description: 'Pohon sukun tumbuh cepat, tidak memerlukan pestisida, dan menyerap CO2 tinggi.',
+    description: 'Pohon sukun adalah tanaman yang sangat efisien dan berketahanan tinggi. Tanaman ini dapat tumbuh subur tanpa memerlukan pestisida atau pupuk kimia, menjadikannya pilihan pangan yang bersih dan alami.',
     color: 'text-green-500',
     bgColor: 'bg-green-50',
   },
@@ -67,8 +67,9 @@ export default function WhyBreadfruit() {
                 Mengapa Sukun?
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
-                Sukun (Artocarpus altilis) adalah superfood lokal Indonesia yang telah menjadi makanan pokok 
-                di berbagai negara Pasifik selama berabad-abad. Mari kenali keunggulan nutrisi yang luar biasa ini.
+                Sukun (Artocarpus altilis) adalah superfood warisan Indonesia yang telah menjadi makanan pokok bernutrisi tinggi 
+                di berbagai negara Pasifik selama lebih dari 3.000 tahun. Jauh sebelum menjadi tren, sukun telah terbukti menjadi 
+                sumber pangan yang andal dan berkelanjutan. Mari kenali keunggulan nutrisi luar biasa dari warisan leluhur yang kita temukan kembali ini.
               </p>
             </div>
 
@@ -87,30 +88,42 @@ export default function WhyBreadfruit() {
                 <h2 className="text-3xl font-bold text-gray-900 mb-6">
                   Superfood Lokal dengan Nutrisi Lengkap
                 </h2>
-                <div className="space-y-4">
+                <div className="space-y-6">
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                    <p className="text-gray-700">
-                      <strong>Protein Lengkap:</strong> Mengandung semua asam amino esensial yang dibutuhkan tubuh
-                    </p>
+                    <div>
+                      <p className="text-gray-700 font-semibold mb-1">Protein Lengkap Berkualitas Tinggi</p>
+                      <p className="text-gray-600 text-sm">
+                        Mengandung spektrum lengkap dari semua asam amino esensial yang dibutuhkan tubuh. Kualitas protein sukun terbukti lebih unggul dibandingkan sumber protein nabati populer seperti kedelai dan lebih mudah dicerna daripada protein gandum.
+                      </p>
+                    </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                    <p className="text-gray-700">
-                      <strong>Bebas Gluten:</strong> Aman untuk penderita celiac disease dan intoleransi gluten
-                    </p>
+                    <div>
+                      <p className="text-gray-700 font-semibold mb-1">Bebas Gluten</p>
+                      <p className="text-gray-600 text-sm">
+                        Pilihan yang aman dan alami bagi penderita celiac disease, intoleransi gluten, atau siapa pun yang ingin mengurangi konsumsi gluten dalam diet mereka.
+                      </p>
+                    </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                    <p className="text-gray-700">
-                      <strong>Indeks Glikemik Rendah:</strong> Tidak menyebabkan lonjakan gula darah yang drastis
-                    </p>
+                    <div>
+                      <p className="text-gray-700 font-semibold mb-1">Indeks Glikemik Moderat</p>
+                      <p className="text-gray-600 text-sm">
+                        Dengan nilai Indeks Glikemik (IG) sekitar 68, sukun melepaskan energi secara perlahan dan tidak menyebabkan lonjakan gula darah yang drastis, menjadikannya sumber energi yang stabil dan berkelanjutan. Ini adalah pilihan yang lebih baik dibandingkan nasi putih (IG ~73) atau kentang rebus (IG ~78).
+                      </p>
+                    </div>
                   </div>
                   <div className="flex items-start space-x-3">
                     <div className="w-2 h-2 bg-primary rounded-full mt-2"></div>
-                    <p className="text-gray-700">
-                      <strong>Kaya Mineral:</strong> Kalium, magnesium, dan fosfor untuk kesehatan optimal
-                    </p>
+                    <div>
+                      <p className="text-gray-700 font-semibold mb-1">Kaya Mineral Esensial</p>
+                      <p className="text-gray-600 text-sm">
+                        Merupakan sumber mineral yang sangat baik, terutama kalium, magnesium, dan fosfor untuk mendukung fungsi tubuh yang optimal. Faktanya, dalam 100 gram sukun terkandung lebih banyak kalium (490 mg) daripada pisang berukuran sedang (sekitar 422 mg).
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
@@ -201,7 +214,7 @@ export default function WhyBreadfruit() {
                   Pertumbuhan Cepat
                 </h3>
                 <p className="text-gray-600">
-                  Pohon sukun dapat berbuah dalam 3-4 tahun dan produktif hingga 50 tahun
+                  Pohon sukun mulai berbuah dalam 3-5 tahun dan dapat tetap produktif hingga 50 tahun atau lebih, menjadikannya sumber pangan jangka panjang yang sangat andal dan efisien.
                 </p>
               </div>
 
@@ -211,7 +224,7 @@ export default function WhyBreadfruit() {
                   Penyerap Karbon
                 </h3>
                 <p className="text-gray-600">
-                  Satu pohon sukun dapat menyerap 28kg CO2 per tahun dari atmosfer
+                  Setiap pohon sukun adalah pahlawan lingkungan. Penelitian ilmiah memvalidasi bahwa satu pohon sukun dapat menyerap sekitar 28.8 kg CO₂ per tahun dari atmosfer, membantu melawan perubahan iklim secara efektif.
                 </p>
               </div>
 
@@ -221,7 +234,7 @@ export default function WhyBreadfruit() {
                   Mendukung Petani
                 </h3>
                 <p className="text-gray-600">
-                  Setiap pembelian SUKUNERGY membantu meningkatkan kesejahteraan petani lokal
+                  Setiap pembelian SUKUNERGY membantu meningkatkan kesejahteraan petani lokal yang membudidayakan tanaman warisan ini secara berkelanjutan.
                 </p>
               </div>
             </div>
@@ -256,10 +269,10 @@ export default function WhyBreadfruit() {
                   <tr className="border-b border-gray-100 bg-green-50">
                     <td className="px-6 py-4 font-semibold text-primary">Sukun</td>
                     <td className="px-6 py-4 text-center">103</td>
-                    <td className="px-6 py-4 text-center font-semibold text-green-600">4.3g</td>
+                    <td className="px-6 py-4 text-center font-semibold text-green-600">4.0g</td>
                     <td className="px-6 py-4 text-center font-semibold text-green-600">4.9g</td>
                     <td className="px-6 py-4 text-center font-semibold text-green-600">29mg</td>
-                    <td className="px-6 py-4 text-center font-semibold text-green-600">68</td>
+                    <td className="px-6 py-4 text-center font-semibold text-green-600">~68</td>
                   </tr>
                   <tr className="border-b border-gray-100">
                     <td className="px-6 py-4">Nasi Putih</td>
@@ -267,23 +280,23 @@ export default function WhyBreadfruit() {
                     <td className="px-6 py-4 text-center">2.7g</td>
                     <td className="px-6 py-4 text-center">0.4g</td>
                     <td className="px-6 py-4 text-center">0mg</td>
-                    <td className="px-6 py-4 text-center">73</td>
+                    <td className="px-6 py-4 text-center">~73</td>
                   </tr>
                   <tr className="border-b border-gray-100">
-                    <td className="px-6 py-4">Kentang</td>
-                    <td className="px-6 py-4 text-center">77</td>
-                    <td className="px-6 py-4 text-center">2.0g</td>
-                    <td className="px-6 py-4 text-center">2.2g</td>
+                    <td className="px-6 py-4">Kentang (Rebus)</td>
+                    <td className="px-6 py-4 text-center">87</td>
+                    <td className="px-6 py-4 text-center">1.9g</td>
+                    <td className="px-6 py-4 text-center">1.8g</td>
                     <td className="px-6 py-4 text-center">19.7mg</td>
-                    <td className="px-6 py-4 text-center">78</td>
+                    <td className="px-6 py-4 text-center">~78</td>
                   </tr>
                   <tr className="border-b border-gray-100">
-                    <td className="px-6 py-4">Ubi Jalar</td>
-                    <td className="px-6 py-4 text-center">86</td>
-                    <td className="px-6 py-4 text-center">1.6g</td>
-                    <td className="px-6 py-4 text-center">3.0g</td>
-                    <td className="px-6 py-4 text-center">2.4mg</td>
-                    <td className="px-6 py-4 text-center">70</td>
+                    <td className="px-6 py-4">Ubi Jalar (Rebus)</td>
+                    <td className="px-6 py-4 text-center">76</td>
+                    <td className="px-6 py-4 text-center">1.4g</td>
+                    <td className="px-6 py-4 text-center">2.5g</td>
+                    <td className="px-6 py-4 text-center">13mg</td>
+                    <td className="px-6 py-4 text-center">~70</td>
                   </tr>
                 </tbody>
               </table>

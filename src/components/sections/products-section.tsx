@@ -64,7 +64,7 @@ export function ProductsSection() {
         </div>
 
         {/* Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 mb-12">
           {featuredProducts.map((product) => (
             <Card key={product.id} className="group hover:shadow-xl transition-all duration-300 hover:-translate-y-1 overflow-hidden">
               {/* Product Image */}
@@ -96,8 +96,8 @@ export function ProductsSection() {
                 </div>
               </div>
 
-              <CardContent className="p-6">
-                <h3 className="text-xl font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors">
+              <CardContent className="p-4 sm:p-6">
+                <h3 className="text-lg sm:text-xl font-semibold text-gray-900 mb-2 group-hover:text-primary transition-colors">
                   {product.name}
                 </h3>
                 <p className="text-gray-600 text-sm mb-4 line-clamp-2">
@@ -141,15 +141,16 @@ export function ProductsSection() {
                 </div>
               </CardContent>
 
-              <CardFooter className="p-6 pt-0 space-y-2">
-                <Button asChild className="w-full">
+              <CardFooter className="p-4 sm:p-6 pt-0 space-y-2">
+                <Button asChild className="w-full text-sm sm:text-base">
                   <Link href={`/products/${product.slug}`}>
-                    Lihat Detail & Pesan
+                    <span className="hidden sm:inline">Lihat Detail & Pesan</span>
+                    <span className="sm:hidden">Lihat Detail</span>
                   </Link>
                 </Button>
                 <Button
                   variant="outline"
-                  className="w-full"
+                  className="w-full text-sm sm:text-base"
                   onClick={() => {
                     const message = encodeURIComponent(
                       `Halo! Saya tertarik dengan ${product.name}. Bisa tolong dijelaskan lebih detail tentang produk ini?`
@@ -161,7 +162,8 @@ export function ProductsSection() {
                     );
                   }}
                 >
-                  Tanya via WhatsApp
+                  <span className="hidden sm:inline">Tanya via WhatsApp</span>
+                  <span className="sm:hidden">Tanya WA</span>
                 </Button>
               </CardFooter>
             </Card>

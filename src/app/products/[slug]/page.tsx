@@ -144,7 +144,7 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   const [selectedVariant, setSelectedVariant] = useState(0);
   const [quantity, setQuantity] = useState(1);
   const [selectedImageIndex, setSelectedImageIndex] = useState(0);
-  const { addToCart } = useCart();
+  const { addItem } = useCart();
   const { toast } = useToast();
 
   if (!product) {
@@ -154,12 +154,15 @@ export default function ProductDetailPage({ params }: ProductDetailPageProps) {
   const currentVariant = product.variants[selectedVariant];
 
   const handleAddToCart = () => {
-    addToCart({
+    addItem({
       id: currentVariant.id,
-      name: product.name,
-      variant: currentVariant.name,
+      productId: product.id,
+      variantId: currentVariant.id,
+      productName: product.name,
+      variantName: currentVariant.name,
       price: currentVariant.price,
       image: product.images[0],
+      maxStock: currentVariant.stock,
       quantity,
     });
 
